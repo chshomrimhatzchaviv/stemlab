@@ -1,0 +1,16 @@
+STEMLAB — IMPORTANT SETUP NOTES
+
+This project contains your website page AND the AI server function.
+
+Do not use Netlify Drop for this ZIP: Drop only publishes the static page, and the AI function will not run. The project needs to be deployed through a connected Git repository so Netlify can build the function.
+
+Simplest available route:
+1. Sign in to GitHub in your browser and create a new repository.
+2. Upload the files and folders from this ZIP to the repository.
+3. In Netlify, choose Add new project -> Import an existing project, then connect that repository.
+4. Use publish directory "public" and functions directory "netlify/functions" (netlify.toml already sets these).
+5. In Netlify site environment variables, add ELEVENLABS_API_KEY with a private API key from your ElevenLabs account, then redeploy.
+
+Processing can cost money; check the provider's current pricing before testing. Never place the API key in public HTML or share it.
+
+This simple version limits uploads to 25 MB, waits up to about 55 seconds, and cannot return ZIPs larger than 5 MB. Some songs will exceed these hosting limits and need a more robust backend. This has not been tested against your own provider account.
