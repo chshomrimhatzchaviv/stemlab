@@ -1,6 +1,6 @@
 export default async (req) => {
   if (req.method !== "POST") return Response.json({error:"Use POST."},{status:405});
-  const key = Netlify.env.get("ELEVENLABS_API_KEY");
+  const key = Netlify.env.get("STEMCONSOLE_API_KEY");
   if (!key) return Response.json({error:"Add ELEVENLABS_API_KEY in Netlify site environment variables."},{status:503});
   try {
     const form = await req.formData();
